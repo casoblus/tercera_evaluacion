@@ -10,7 +10,7 @@ public abstract class Conta
 	{
 		num = _num;
 		titular = _titular;
-		MODIFICAR_SALDO(_saldo);
+		MODIFICAR_SALDO( _saldo );
 	}
 	
 	public void MODIFICAR_SALDO( int _saldo )
