@@ -15,6 +15,10 @@ public class Reparacion
 	private String concepto;
 	private String total;
 	
+	/**
+	 * Reparacion()
+	 * Constructor de clase
+	 */
 	public Reparacion()
 	{
 		Scanner teclado = new Scanner( System.in );
@@ -30,6 +34,11 @@ public class Reparacion
 		this.alta( concept, tot );
 	}
 
+	/**
+	 * alta
+	 * @param concept - String - Concepto de la reparacion.
+	 * @param tot - String - Coste total de la reparacion.
+	 */
 	private void alta ( String concept , String tot )
 	{
 		total = tot;
@@ -38,6 +47,12 @@ public class Reparacion
 		id = counter;
 	}
 
+
+	/**
+	 * histReparaciones()
+	 * Recorre el la coleccion de reparaciones de un coche e invoca visualizar para cada uno de ellos.
+	 * @param repar - ArrayList<Reparacion> que contenga las reparaciones del coche.
+	 */
 	public static void histReparaciones( ArrayList<Reparacion> repar )
 	{
 		System.out
@@ -45,16 +60,24 @@ public class Reparacion
 		for ( int i = repar.size() - 1; i > 0; i-- )
 		{
 			Reparacion rep = repar.get( i );
-			visualizar( rep );
+			rep.visualizar();
 		}
 	}
-	private static void visualizar( Reparacion rep )
+
+
+	/**
+	 * visualizar
+	 * Imprime por pantalla los atributos del un objeto reparacion.
+	 *
+	 * @param rep - Objeto de clase Reparacion.
+	 */
+	private void visualizar()
 	{
 			System.out
-				.print( "\n\n Codigo: " + rep.id );
+				.print( "\n\n Codigo: " + id );
 			System.out
-				.print( "\n Concepto: " + rep.concepto );
+				.print( "\n Concepto: " + concepto );
 			System.out
-				.print( "\n Total: " + rep.total );
+				.print( "\n Total: " + total );
 	}
 }

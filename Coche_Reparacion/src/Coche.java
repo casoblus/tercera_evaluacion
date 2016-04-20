@@ -8,7 +8,8 @@
  */
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Coche {
+public class Coche 
+{
 	protected String matricula;
 	protected String marca;
 	protected String modelo;
@@ -34,15 +35,15 @@ public class Coche {
 		Scanner teclado = new Scanner( System.in );
 
 		System.out
-				.print( "\n Matricula: ");
+			.print( "\n Matricula: ");
 		String mat = teclado.nextLine();
 		
 		System.out
-				.print( "\n Marca: ");
+			.print( "\n Marca: ");
 		String mar = teclado.nextLine();
 		
 		System.out
-				.print( "\n Modelo: ");
+			.print( "\n Modelo: ");
 		String mod = teclado.nextLine();
 		
 		this.alta( mat, mar, mod );
@@ -64,6 +65,9 @@ public class Coche {
 			.println( " Marca: " + marca );
 		System.out
 			.println( " Modelo: " + modelo );
+		int cont = reparaciones.size();
+		System.out
+				.println( "DEBUG: REPARACIONES=" + cont );
 		if ( reparaciones.size() != 0 )
 		{
 			Reparacion.histReparaciones( reparaciones );

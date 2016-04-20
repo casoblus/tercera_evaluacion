@@ -10,21 +10,28 @@ public class Controlador {
 	
 	private static ArrayList<Coche> coches = new ArrayList<Coche>();
 	
+	/**
+	 * getOption()
+	 * Recoge entrada por teclado y devuelve un entero positivo.
+	 */
 	private static int getOption()
 	{
 		Scanner teclado = new Scanner( System.in );
 		Integer number;
-			try
-			{
-				number = Integer.parseInt( teclado.nextLine() );
-			}
-			catch ( Exception e )
-			{
-				number = -1;
-			}
+		try
+		{
+			number = Integer.parseInt( teclado.nextLine() );
+		}
+		catch ( Exception e )
+		{
+			number = -1;
+		}
 		return number;
 	}
 
+	/**
+	 * addCoche()
+	 */
 	private static void addCoche()
 	{
 		Coche coche = new Coche();
@@ -33,6 +40,9 @@ public class Controlador {
 		coches.get( pos - 1 );
 	}
 
+	/**
+	 * selectCoche()
+	 */
 	private static Coche selectCoche()
 	{
 		Integer i;
@@ -45,13 +55,18 @@ public class Controlador {
 		return coche;
 	}
 
+	/**
+	 * verCoche()
+	 */
 	private static void verCoche()
 	{
 		Coche coche = selectCoche();
 		coche.visualizar();
 			
 	}
-
+	/**
+	 * addReparacion()
+	 */
 	private static void addReparacion()
 	{	
 		Coche coche = selectCoche();
