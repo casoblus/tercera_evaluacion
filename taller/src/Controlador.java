@@ -31,7 +31,7 @@ class Controlador {
 		do {
 			System.out
 				.print( "Selecciona coche: ");
-			i = utilidades.getOption();
+			i = utilidades.getOption( 0, coches.size()-1 );
 		} while ( i < 0 );
 		Coche coche = coches.get( i );
 		return coche;
@@ -62,6 +62,8 @@ class Controlador {
 	{
 		// TODO Auto-generated method stub
 		Integer option;
+		System.out
+			.print( "\n >>>>>  TALLER SUPER GUAY  <<<<< \n" );
 		do {
 
 			do {
@@ -70,9 +72,9 @@ class Controlador {
 					.print( "\n 1. Nuevo coche. \n 2. Ver coche. \n 3. Añadir reparación. \n 0. Salir." );
 
 				System.out
-					.print( "\n Selecciona una opción válida: " );
+					.print( "\n\n Selecciona una opción válida: " );
 
-				option = utilidades.getOption();
+				option = utilidades.getOption( 0, 3 );
 
 			} while ( option < 0 );
 
@@ -82,14 +84,22 @@ class Controlador {
 						addCoche();
 						break;
 				case 2:
-						verCoche();
+						if ( coches.size() > 0 )
+							verCoche();
+						else
+							System.out
+								.println("No existen coches aún.");
 						break;
 				case 3:
-						addReparacion();
+						if ( coches.size() > 0 )
+							addReparacion();
+						else
+							System.out
+								.println("No existen coches aún.");
 						break;
 				case 0:
 						System.out
-							.print( "\n Hasta pronto!");
+							.print( "\n Hasta pronto! \n\n");
 						break;
 				default:
 						break;
